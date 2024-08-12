@@ -9,7 +9,10 @@ const  bodyParser = require('body-parser');
 const app = express();
 const { MongoClient, ObjectId} = require('mongodb');
 app.use(bodyParser.json())
-app.use(cors());
+app.use(cors({
+  origin: 'https://e-commerce-project1232.netlify.app/',
+  credentials: true, // Set this if you're using cookies or authentication
+}));
 const mongodbConnect = require('./src/config/config');
 const dotenv = require('dotenv');
 dotenv.config()
