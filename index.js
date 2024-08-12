@@ -13,7 +13,7 @@ app.use(cors({
   origin: 'https://e-commerce-project1232.netlify.app',
   credentials: true, // Set this if you're using cookies or authentication
 }));
-app.use(cors({ origin: "https://e-commerce-project1232.netlify.app" }));
+
 const mongodbConnect = require('./src/config/config');
 const dotenv = require('dotenv');
 dotenv.config()
