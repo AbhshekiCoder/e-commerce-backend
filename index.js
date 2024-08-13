@@ -11,7 +11,9 @@ const { MongoClient, ObjectId} = require('mongodb');
 app.use(bodyParser.json())
 const corsOptions = {
   origin: 'https://cheerful-mermaid-5d0aca.netlify.app',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type, Authorization"
 };
 
 app.use(cors(corsOptions));
