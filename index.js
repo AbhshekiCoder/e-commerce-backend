@@ -12,6 +12,7 @@ app.use(bodyParser.json())
 app.use(cors({
   origin: 'https://cheerful-mermaid-5d0aca.netlify.app',
   credentials: true, // Set this if you're using cookies or authentication
+  Access-Control-Allow-Origin: true,
 }));
 
 const mongodbConnect = require('./src/config/config');
