@@ -10,7 +10,7 @@ const app = express();
 const { MongoClient, ObjectId} = require('mongodb');
 app.use(bodyParser.json())
 app.use(cors({
-  origin: 'https://cheerful-mermaid-5d0aca.netlify.app/',
+  origin: 'https://cheerful-mermaid-5d0aca.netlify.app',
   credentials: true, // Set this if you're using cookies or authentication
  
 }));
