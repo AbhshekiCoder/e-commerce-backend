@@ -9,12 +9,12 @@ const  bodyParser = require('body-parser');
 const app = express();
 const { MongoClient, ObjectId} = require('mongodb');
 app.use(bodyParser.json())
-app.use(cors({
+const corsOptions = {
   origin: 'https://cheerful-mermaid-5d0aca.netlify.app',
-  credentials: true, // Set this if you're using cookies or authentication
- 
-}));
+  optionsSuccessStatus: 200
+};
 
+app.use(cors(corsOptions));
 const mongodbConnect = require('./src/config/config');
 const dotenv = require('dotenv');
 dotenv.config()
