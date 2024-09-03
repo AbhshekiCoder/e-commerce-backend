@@ -16,7 +16,7 @@ const options = {
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization"
 };
-
+console.log("hello")
 
 app.use(cors(options));
 app.use((req, res, next) => {
