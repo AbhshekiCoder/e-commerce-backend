@@ -294,6 +294,9 @@ app.get('/', cors(), (req, res)=>{
   res.send("<h2>hello<h2>")
   
 })
+app.get('/', (req, res)=>{
+  res.send("<h2>hello</h2>")
+}
 
 const port = process.env.port||5000;
 app.listen(port, ()=>{
