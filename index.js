@@ -8,15 +8,22 @@ const  session = require('express-session');
 const  bodyParser = require('body-parser');
 const app = express();
 const { MongoClient, ObjectId} = require('mongodb');
-app.use(bodyParser.json())
-const corsOptions = {
+app.use(bodyParser.json());
+app.use(cors());
+const options = {
   origin: 'https://e-commerce1121233.netlify.app',
   optionsSuccessStatus: 200,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization"
 };
 
-app.use(cors(corsOptions));
+
+app.use(cors(options));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 const mongodbConnect = require('./src/config/config');
 const dotenv = require('dotenv');
 dotenv.config()
@@ -283,12 +290,10 @@ app.post("/register",upload.single('image'),  (req, res)=>{
 })
 */
 
-app.get('/', (req, res)=>{
-  res.send("<h1>hello</h1>")
+app.get('/', cors(), (req, res)=>{
+  
 })
-app.get('/Success', (req, res)=>{
-   res.send("<h1>sucess<h1>")
-})
+
 const port = process.env.port||5000;
 app.listen(port, ()=>{
 
