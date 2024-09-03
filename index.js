@@ -291,6 +291,7 @@ app.post("/register",upload.single('image'),  (req, res)=>{
 */
 
 app.get('/', cors(), (req, res)=>{
+  res.send("<h2>hello<h2>")
   
 })
 
